@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <audio id="audioplayer" controls>
+        <source src="./audio2.mpeg" type="audio/mpeg">
+
+    </audio>
+
+    <p id="eventoypt">Event will Appear here</p>
+
+    <script>
+        const audio = document.getElementById("audioplayer");
+        const output = document.getElementById("eventoypt");
+
+        // play event
+        audio.addEventListener("play", () => {
+            output.textContent ='play event fired!';
+            console.log("play event fired");
+        })
+        // pause event
+        audio.addEventListener("pause", () => {
+            output.textContent='pause event fired!'
+        })
+        // ended event
+        audio.addEventListener('ended', () => {
+            output.textContent='ended event fired';
+        })
+    </script>
+</body>
+</html>
